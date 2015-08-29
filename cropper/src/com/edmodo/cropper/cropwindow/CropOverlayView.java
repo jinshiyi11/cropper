@@ -140,6 +140,9 @@ public class CropOverlayView extends View {
     protected void onDraw(Canvas canvas) {
 
         super.onDraw(canvas);
+        
+        if(mBitmapRect.isEmpty())
+        	return;
 
         // Draw translucent background for the cropped area.
         drawBackground(canvas, mBitmapRect);
@@ -387,6 +390,9 @@ public class CropOverlayView extends View {
         // initialized
         if (initializedCropWindow == false)
             initializedCropWindow = true;
+        
+        if(bitmapRect.isEmpty())
+        	return;
 
         if (mFixAspectRatio
 				&& (bitmapRect.left != 0 || bitmapRect.right != 0
